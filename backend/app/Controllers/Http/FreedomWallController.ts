@@ -4,7 +4,7 @@ import { User } from 'Database/entities/user';
 import { ic } from 'azle';
 import { Response, Request } from 'express';
 
-export default class UsersController {
+export default class FreedomwallsController {
   static async me(request: Request, response: Response) {
     try {
       const user = await User.findOneBy({

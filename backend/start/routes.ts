@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
 import ApisController from 'App/Controllers/Http/ApisController';
-import UsersController from 'App/Controllers/Http/UsersController';
+import UsersController from 'App/Controllers/Http/UserController';
 
 import isAuth from 'App/Middleware/Auth';
 
@@ -18,6 +18,7 @@ Route.get('/user/me', isAuth, UsersController.me);
 Route.post('/user/register', isAuth, UsersController.register);
 Route.post('/user/update', isAuth, UsersController.update);
 
+
 /*
 |--------------------------------------------------------------------------
 | Public Routes
@@ -26,8 +27,5 @@ Route.post('/user/update', isAuth, UsersController.update);
 
 Route.get('/health', ApisController.health);
 Route.get('/config', ApisController.config);
-
-// USER
-Route.get('/user/:username/info', UsersController.view_info_of_user_by_public);
 
 export { Route as routes };
